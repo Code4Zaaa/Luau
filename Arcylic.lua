@@ -1456,6 +1456,10 @@ function Library._CreateSlider(tab, config)
         )
     end
 
+    task.spawn(function()
+        callback(currentValue)
+    end)
+
     return methods
 end
 
@@ -1856,6 +1860,10 @@ function Library._CreateDropdown(tab, config)
         )
     end
 
+    task.spawn(function()
+        callback(selected)
+    end)
+
     return methods
 end
 
@@ -1977,6 +1985,10 @@ function Library._CreateKeybind(tab, config, lib)
             function(value) methods:SetKey(value) end
         )
     end
+
+    task.spawn(function()
+        callback(currentKey)
+    end)
 
     return methods
 end
@@ -2264,6 +2276,10 @@ function Library._CreateColorPicker(tab, config)
         )
     end
 
+    task.spawn(function()
+        callback(currentColor)
+    end)
+
     return methods
 end
 
@@ -2400,6 +2416,10 @@ function Library._CreateTextBox(tab, config)
             function(value) methods:SetText(value) end
         )
     end
+
+    task.spawn(function()
+        callback(currentText)
+    end)
 
     return methods
 end
